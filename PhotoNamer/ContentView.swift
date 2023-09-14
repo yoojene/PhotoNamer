@@ -8,16 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var showList = false
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            Group {
+                if showList {
+                    PhotoListView()
+                        
+                } else {
+                    PhotoSelectView()
+                }
+                
+            }
+            .navigationTitle("PhotoNamer")
+            .toolbar {
+                Button(showList ? "Select Photo" : "List") { showList.toggle()}
+                if !showList {
+                    Button("Save", action: {
+                        // TODO
+                    })
+                    
+                }
+            }
+
         }
-        .padding()
     }
+    
+    
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
