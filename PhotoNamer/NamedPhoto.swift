@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-class NamedPhoto: Identifiable, Codable {
+//TODO need to share thie across views, poss refactor as ViewModel 
+class NamedPhoto: ObservableObject, Identifiable, Codable {
     
     enum CodingKeys: CodingKey {
         case id, photoName, inputImage

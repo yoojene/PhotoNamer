@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO need to consume NamedPhoto class, only has static images for testing
 struct PhotoListView: View {
     var body: some View {
         List {

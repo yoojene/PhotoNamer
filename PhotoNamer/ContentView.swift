@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+//TODO maybe refactor using ViewModel.  Needs shared state
 struct ContentView: View {
     
-    @State private var showList = false
+    @State private var showList = true
+    
     var body: some View {
         NavigationView {
             Group {
