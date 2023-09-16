@@ -11,7 +11,7 @@ import SwiftUI
 struct PhotoNamerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(photo:NamedPhoto(id: UUID()))
         }
     }
 }
