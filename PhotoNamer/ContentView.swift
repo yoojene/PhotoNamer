@@ -10,7 +10,7 @@ import Foundation
 struct ContentView: View {
     
     @State var photo: Photo
-    @State private var showList = false
+    @State private var showList = true
     @StateObject private var photos = Photos()
     @State private var image: Image?
     @State private var showPhotoPicker = false

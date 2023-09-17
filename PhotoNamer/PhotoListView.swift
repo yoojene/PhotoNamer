@@ -12,7 +12,10 @@ struct PhotoListView: View {
     @StateObject private var photos = Photos()
 
     var body: some View {
-        List(photos.photos, id: \.id) { photo in
+        if photos.photos.count == 0 {
+            Text("No Photos Found")
+        } else {
+            List(photos.photos, id: \.id) { photo in
                 NavigationLink {
                     PhotoDetailView(photo: photo)
                 } label: {
@@ -24,9 +27,10 @@ struct PhotoListView: View {
                             .clipShape(Circle())
                         Text(photo.photoName)
                             .padding(.leading)
-
+                        
                     }
                 }
+            }
         }
     }
 }
