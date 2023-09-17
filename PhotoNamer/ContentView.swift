@@ -7,11 +7,9 @@
 
 import SwiftUI
 import Foundation
-//TODO maybe refactor using ViewModel.  Needs shared state
 struct ContentView: View {
     
-    @State var photo: NamedPhoto
-//    @ObservedObject var photos: Photos
+    @State var photo: Photo
     @State private var showList = false
     @StateObject private var photos = Photos()
     @State private var image: Image?
@@ -24,30 +22,7 @@ struct ContentView: View {
         NavigationView {
             Group {
                 if showList {
-//                    PhotoListView()
-                    List(photos.photos, id: \.id) { photo in
-                            NavigationLink {
-//                                Text("detail view here")
-                                PhotoDetailView(photo: photo)
-                            } label: {
-                                HStack {
-                                    Image(uiImage: photo.inputImage ?? UIImage())
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 50, height: 50)
-                                        .clipShape(Circle())
-                                    Text(photo.photoName)
-                                        .padding(.leading)
-        
-                                }
-                                .onAppear() {
-                                    print("appearing")
-                                    
-                                }
-                            }
-//                        }
-                    }
-                   
+                    PhotoListView()
                 } else {
                     VStack {
                         ZStack {
@@ -139,6 +114,6 @@ struct ContentView_Previews: PreviewProvider {
     
 //    let photos = NamedPhoto(id: UUID())
     static var previews: some View {
-        ContentView(photo: NamedPhoto(id: UUID()))
+        ContentView(photo: Photo(id: UUID()))
     }
 }

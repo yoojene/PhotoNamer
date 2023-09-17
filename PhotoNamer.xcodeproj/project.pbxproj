@@ -14,10 +14,9 @@
 		44BA32EE2AB34D5500FECB1E /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32ED2AB34D5500FECB1E /* PhotoPicker.swift */; };
 		44BA32F02AB3595600FECB1E /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32EF2AB3595600FECB1E /* PhotoListView.swift */; };
 		44BA32F22AB35C9F00FECB1E /* PhotoSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32F12AB35C9F00FECB1E /* PhotoSelectView.swift */; };
-		44BA32F42AB35ED700FECB1E /* NamedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32F32AB35ED700FECB1E /* NamedPhoto.swift */; };
+		44BA32F42AB35ED700FECB1E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32F32AB35ED700FECB1E /* Photo.swift */; };
 		44BA32F62AB35F5600FECB1E /* PhotoSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32F52AB35F5600FECB1E /* PhotoSaver.swift */; };
 		44BA32F82AB36F1E00FECB1E /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32F72AB36F1E00FECB1E /* FileManager-DocumentsDirectory.swift */; };
-		44BA32FA2AB60F1100FECB1E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32F92AB60F1100FECB1E /* Photo.swift */; };
 		44BA32FC2AB64FE300FECB1E /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32FB2AB64FE300FECB1E /* PhotoDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,10 +29,9 @@
 		44BA32ED2AB34D5500FECB1E /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		44BA32EF2AB3595600FECB1E /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
 		44BA32F12AB35C9F00FECB1E /* PhotoSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectView.swift; sourceTree = "<group>"; };
-		44BA32F32AB35ED700FECB1E /* NamedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedPhoto.swift; sourceTree = "<group>"; };
+		44BA32F32AB35ED700FECB1E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		44BA32F52AB35F5600FECB1E /* PhotoSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSaver.swift; sourceTree = "<group>"; };
 		44BA32F72AB36F1E00FECB1E /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
-		44BA32F92AB60F1100FECB1E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		44BA32FB2AB64FE300FECB1E /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +67,7 @@
 			children = (
 				44BA32DF2AB34C7200FECB1E /* PhotoNamerApp.swift */,
 				44BA32E12AB34C7200FECB1E /* ContentView.swift */,
-				44BA32F32AB35ED700FECB1E /* NamedPhoto.swift */,
+				44BA32F32AB35ED700FECB1E /* Photo.swift */,
 				44BA32F72AB36F1E00FECB1E /* FileManager-DocumentsDirectory.swift */,
 				44BA32E32AB34C7300FECB1E /* Assets.xcassets */,
 				44BA32E52AB34C7300FECB1E /* Preview Content */,
@@ -77,7 +75,6 @@
 				44BA32EF2AB3595600FECB1E /* PhotoListView.swift */,
 				44BA32F12AB35C9F00FECB1E /* PhotoSelectView.swift */,
 				44BA32F52AB35F5600FECB1E /* PhotoSaver.swift */,
-				44BA32F92AB60F1100FECB1E /* Photo.swift */,
 				44BA32FB2AB64FE300FECB1E /* PhotoDetailView.swift */,
 			);
 			path = PhotoNamer;
@@ -165,10 +162,9 @@
 				44BA32FC2AB64FE300FECB1E /* PhotoDetailView.swift in Sources */,
 				44BA32E02AB34C7200FECB1E /* PhotoNamerApp.swift in Sources */,
 				44BA32EE2AB34D5500FECB1E /* PhotoPicker.swift in Sources */,
-				44BA32FA2AB60F1100FECB1E /* Photo.swift in Sources */,
 				44BA32F62AB35F5600FECB1E /* PhotoSaver.swift in Sources */,
 				44BA32F22AB35C9F00FECB1E /* PhotoSelectView.swift in Sources */,
-				44BA32F42AB35ED700FECB1E /* NamedPhoto.swift in Sources */,
+				44BA32F42AB35ED700FECB1E /* Photo.swift in Sources */,
 				44BA32F82AB36F1E00FECB1E /* FileManager-DocumentsDirectory.swift in Sources */,
 				44BA32F02AB3595600FECB1E /* PhotoListView.swift in Sources */,
 			);

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PhotoDetailView: View {
 
-    let photo: NamedPhoto
+    let photo: Photo
 
     var body: some View {
         VStack {
@@ -24,6 +24,6 @@ struct PhotoDetailView: View {
 
 struct PhotoDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoDetailView(photo: NamedPhoto(id: UUID()))
+        PhotoDetailView(photo: Photo(id: UUID()))
     }
 }

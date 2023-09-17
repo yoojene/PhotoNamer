@@ -2,25 +2,23 @@
 //  Photo.swift
 //  PhotoNamer
 //
-//  Created by Eugene on 16/09/2023.
+//  Created by Eugene on 14/09/2023.
 //
+
 import Foundation
-import UIKit
+import SwiftUI
 
-class Photo: Identifiable, Codable, ObservableObject {
-   
-
+struct Photo: Identifiable, Codable {
 
     enum CodingKeys: CodingKey {
         case id, photoName, inputImage
     }
-
-    @Published var id: UUID
-    @Published var inputImage: UIImage?
-    @Published var photoName = ""
     
-
-    required init(from decoder: Decoder) throws {
+    var id = UUID()
+    var inputImage: UIImage?
+    var photoName = ""
+    
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(UUID.self, forKey: .id)
         self.photoName = try container.decode(String.self, forKey: .photoName)
@@ -28,7 +26,7 @@ class Photo: Identifiable, Codable, ObservableObject {
         let decodedImage = UIImage(data: imageData) ?? UIImage()
         self.inputImage = decodedImage
    }
-
+    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
@@ -40,34 +38,22 @@ class Photo: Identifiable, Codable, ObservableObject {
         }
     }
     
-   
-    
-    
     init(id: UUID) {
         self.id = id
     }
-
 }
 
-//class Photos: ObservableObject, Codable {
-//    
-//    enum CodingKeys: CodingKey {
-//        case photos
-//    }
-//
-//    @Published var photos = [Photo]()
-//    
-//    required init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        self.photos = try container.decode([Photo].self, forKey: .photos)
-//    }
-//    
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(self.photos, forKey: .photos)
-//    }
-//    
-//    init() { }
-//
-//}
+class Photos: ObservableObject, Identifiable {
+    let savePath = FileManager.documentsDirectory.appendingPathComponent("PhotoNamerData.json")
 
+    @Published var photos: [Photo]
+    
+    init() {
+        do {
+            let data = try Data(contentsOf: savePath)
+            photos = try JSONDecoder().decode([Photo].self, from: data)
+        } catch {
+            photos = []
+        }
+    }
+}
