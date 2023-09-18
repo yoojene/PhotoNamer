@@ -11,17 +11,21 @@ import SwiftUI
 struct Photo: Identifiable, Codable {
 
     enum CodingKeys: CodingKey {
-        case id, photoName, inputImage
+        case id, photoName, inputImage, photoLocation
     }
     
     var id = UUID()
     var inputImage: UIImage?
     var photoName = ""
+    var photoLocation = [UserLocation]()
+
+ 
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(UUID.self, forKey: .id)
         self.photoName = try container.decode(String.self, forKey: .photoName)
+        self.photoLocation = try container.decode([UserLocation].self, forKey: .photoLocation)
         let imageData = try container.decode(Data.self, forKey: .inputImage)
         let decodedImage = UIImage(data: imageData) ?? UIImage()
         self.inputImage = decodedImage
@@ -32,6 +36,7 @@ struct Photo: Identifiable, Codable {
 
         try container.encode(self.id, forKey: .id)
         try container.encode(self.photoName, forKey: .photoName)
+        try container.encode(self.photoLocation, forKey: .photoLocation)
         guard let inputImage = inputImage else { return }
         if let jpegData = inputImage.jpegData(compressionQuality: 0.8) {
             try container.encode(jpegData, forKey: .inputImage)

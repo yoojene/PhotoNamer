@@ -18,6 +18,8 @@
 		44BA32F62AB35F5600FECB1E /* PhotoSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32F52AB35F5600FECB1E /* PhotoSaver.swift */; };
 		44BA32F82AB36F1E00FECB1E /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32F72AB36F1E00FECB1E /* FileManager-DocumentsDirectory.swift */; };
 		44BA32FC2AB64FE300FECB1E /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32FB2AB64FE300FECB1E /* PhotoDetailView.swift */; };
+		44BA32FE2AB87B1C00FECB1E /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32FD2AB87B1C00FECB1E /* LocationFetcher.swift */; };
+		44BA33002AB8893200FECB1E /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA32FF2AB8893200FECB1E /* UserLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		44BA32F52AB35F5600FECB1E /* PhotoSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSaver.swift; sourceTree = "<group>"; };
 		44BA32F72AB36F1E00FECB1E /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		44BA32FB2AB64FE300FECB1E /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		44BA32FD2AB87B1C00FECB1E /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		44BA32FF2AB8893200FECB1E /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				44BA32F12AB35C9F00FECB1E /* PhotoSelectView.swift */,
 				44BA32F52AB35F5600FECB1E /* PhotoSaver.swift */,
 				44BA32FB2AB64FE300FECB1E /* PhotoDetailView.swift */,
+				44BA32FD2AB87B1C00FECB1E /* LocationFetcher.swift */,
+				44BA32FF2AB8893200FECB1E /* UserLocation.swift */,
 			);
 			path = PhotoNamer;
 			sourceTree = "<group>";
@@ -160,9 +166,11 @@
 			files = (
 				44BA32E22AB34C7200FECB1E /* ContentView.swift in Sources */,
 				44BA32FC2AB64FE300FECB1E /* PhotoDetailView.swift in Sources */,
+				44BA32FE2AB87B1C00FECB1E /* LocationFetcher.swift in Sources */,
 				44BA32E02AB34C7200FECB1E /* PhotoNamerApp.swift in Sources */,
 				44BA32EE2AB34D5500FECB1E /* PhotoPicker.swift in Sources */,
 				44BA32F62AB35F5600FECB1E /* PhotoSaver.swift in Sources */,
+				44BA33002AB8893200FECB1E /* UserLocation.swift in Sources */,
 				44BA32F22AB35C9F00FECB1E /* PhotoSelectView.swift in Sources */,
 				44BA32F42AB35ED700FECB1E /* Photo.swift in Sources */,
 				44BA32F82AB36F1E00FECB1E /* FileManager-DocumentsDirectory.swift in Sources */,
@@ -295,8 +303,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PhotoNamer/Preview Content\"";
+				DEVELOPMENT_TEAM = S736JG73R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to associate it with your photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -323,8 +333,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PhotoNamer/Preview Content\"";
+				DEVELOPMENT_TEAM = S736JG73R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to associate it with your photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

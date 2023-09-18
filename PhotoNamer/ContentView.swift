@@ -10,39 +10,56 @@ import Foundation
 struct ContentView: View {
     
     @State var photo: Photo
-    @State private var showList = true
+    @State private var showList = false
     @StateObject private var photos = Photos()
-   
+    @State private var locations = [UserLocation]()
     
     let savePath = FileManager.documentsDirectory.appendingPathComponent("PhotoNamerData.json")
    
+    let locationFetcher = LocationFetcher()
 
     var body: some View {
         NavigationView {
             Group {
                 if showList {
                     PhotoListView()
+
                 } else {
-                    PhotoSelectView(photo: $photo)
+                    PhotoSelectView(photo: $photo, locations: locations)
+                        .onAppear {
+                            self.locationFetcher.start()
+                            photo.inputImage = nil
+                        }
                 }
-                
+  
             }
             .navigationTitle("PhotoNamer")
             .toolbar {
-                Button(showList ? "Select Photo" : "List") { showList.toggle()}
+                Button(showList ? "Select Photo" : "List") {
+                    showList.toggle()
+                    locations = []
+                }
                 if !showList {
                     Button("Save", action: {
+                   
+                        if let location = self.locationFetcher.lastKnownLocation {
+                            print("Your location is \(location)")
+                            locations.append(UserLocation(id: UUID(), latitude: location.latitude, longitude: location.longitude))
+                            
+                        }
                         var newPhoto = photo
                         newPhoto.id = UUID()
                         newPhoto.inputImage = photo.inputImage
                         newPhoto.photoName = photo.photoName
+                        newPhoto.photoLocation = locations
                         
                         photos.photos.append(newPhoto)
                         
                         save()
-                        showList = true
+//                        showList = true
                         
                     })
+                    .disabled(photo.inputImage == nil)
                     
                 }
             }
@@ -73,8 +90,7 @@ struct ContentView: View {
 
 
 struct ContentView_Previews: PreviewProvider {
-    
-//    let photos = NamedPhoto(id: UUID())
+        
     static var previews: some View {
         ContentView(photo: Photo(id: UUID()))
     }
